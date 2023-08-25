@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <br />
+    <div class="row">
+        <div class="col-md-2">
+            <button type="button" class="btn btn-primary btn-block mb-2" data-toggle="collapse" data-target="#carStock">See the entire car stock</button>
+            <div class="collapse" id="carStock">
+                <div class="card card-body">
+                    <a href="/html/Car.html" class="btn btn-secondary btn-block mb-2">SUV</a>
+                    <a href="/html/Car.html" class="btn btn-secondary btn-block mb-2">Hatchback</a>
+                    <a href="/html/Car.html" class="btn btn-secondary btn-block mb-2">Sedan</a>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary btn-block mb-2" data-toggle="collapse" data-target="#filterSearch">Filter or Search a certain car</button>
+            <div class="collapse" id="filterSearch">
+                <div class="card card-body">
+                    <form method="post" action="/Home/Search">
+                        <div class="form-group">
+                            <label for="manufacturer">Manufacturer:</label>
+                            <input type="text" class="form-control" id="manufacturer" name="manufacturer">
+                        </div>
+                        <div class="form-group">
+                            <label for="model">Model:</label>
+                            <input type="text" class="form-control" id="model" name="model">
+                        </div>
+                        <div class="form-group">
+                            <label for="year">Year:</label>
+                            <input type="text" class="form-control" id="year" name="year">
+                        </div>
+                        <div class="form-group">
+                            <label for="color">Color:</label>
+                            <select class="form-control" id="color" name="color">
+                                <option value="">Select a color</option>
+                                <option value="blue">Blue</option>
+                                <option value="black">Black</option>
+                                <option value="red">Red</option>
+                                <option value="white">White</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Price Range:</label>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="minPrice" name="minPrice" placeholder="Minimum Price">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label type="text" class="form-control" id="maxPrice" name="maxPrice" placeholder="Maximum Price">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <select class="form-control" id="minPriceDropdown" name="minPriceDropdown">
+                                        <option value="">Select Min Price</option>
+                                        <option value="100">100 lei</option>
+                                        <option value="200">200 lei</option>
+                                        <option value="300">300 lei</option>
+                                        <option value="400">400 lei</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6">
+                                    <select class="form-control" id="maxPriceDropdown" name="maxPriceDropdown">
+                                        <option value="">Select Max Price</option>
+                                        <option value="100">100 lei</option>
+                                        <option value="200">200 lei</option>
+                                        <option value="300">300 lei</option>
+                                        <option value="400">400 lei</option>
+                                        <option value="500">500 lei</option>
+                                        <option value="600">600 lei</option>
+                                        <option value="700">700 lei</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Apply Filters</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="carousel slide" data-ride="carousel" id="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel" data-slide-to="1"></li>
+                    <li data-target="#carousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://via.placeholder.com/800x400?text=Our+clients+favorite+car" class="d-block w-100" alt="Our clients favorite car">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://via.placeholder.com/800x400?text=Most+popular+SUV" class="d-block w-100" alt="Most popular SUV">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://via.placeholder.com/800x400?text=Most+popular+category" class="d-block w-100" alt="Most popular category">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card">
+                <div class="card-header">
+                    <h5>News</h5>
+                </div>
+                <div class="card-body">
+                    <p>Stay up-to-date with our latest news and updates.</p>
+                    <a href="#" class="btn btn-primary">Read more</a>
+                </div>
+            </div>
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5>Promotional Campaigns</h5>
+                </div>
+                <div class="card-body">
+                    <p>Take advantage of our special promotions and discounts.</p>
+                    <a href="#" class="btn btn-primary">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

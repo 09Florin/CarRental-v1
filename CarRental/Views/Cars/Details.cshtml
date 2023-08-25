@@ -1,0 +1,80 @@
+﻿@model CarRental.Models.Car
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<link rel="stylesheet" href="../css/Car.css" />
+
+<div class="container text-center">
+    <div class="car-details">
+        <h1>Details</h1>
+        <div class="car-image">
+            <img src="@Model.Image" alt="@Model.Manufacturer @Model.Model" "style=" max-width: 100px; display: block; margin: 0 auto;" />
+        </div>
+
+        <div class="car-info">
+            <h4>Car</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Manufacturer)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Manufacturer)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Model)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Model)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Year)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Year)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Color)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Color)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.RentalPricePerDay)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.RentalPricePerDay)
+                </dd>
+            </dl>
+        </div>
+
+        <div class="car-actions">
+            <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+
+        <h1>Rent Car</h1>
+
+        <form method="post" asp-action="Rent" asp-controller="Cars">
+            <div class="card-body">
+                <input type="hidden" name="carId" value="@Model.Id" />
+                <div class="form-group">
+                    <label for="PickupDate">Pickup Date:</label>
+                    <input type="date" class="form-control" name="pickupDate" />
+                </div>
+                <div class="form-group">
+                    <label for="ReturnDate">Return Date:</label>
+                    <input type="date" class="form-control" name="returnDate" />
+                </div>
+                <button type="submit" class="btn btn-primary">Rent</button>
+            </div>
+        </form>
+        <footer>
+            <p>The client will be responsible for any damages done to the car and is required to return the car with a full tank of fuel.</p>
+        </footer>
+    </div>
+</div>
+
+

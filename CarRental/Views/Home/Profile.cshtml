@@ -1,0 +1,67 @@
+﻿@model CarRental.ViewModels.ProfileViewModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="../css/Profile.css">
+</head>
+<body>
+    <br />
+    <br />
+    <div class="container">
+        <div class="profile-header">
+            <img src="user-icon.png" alt="User Icon" class="user-icon">
+            <button class="change-icon-btn">Change Icon</button>
+        </div>
+        <div class="profile-content">
+            <h2>Profile</h2>
+            <div class="profile-field">
+                <h3>Username:</h3>
+                @if (Model != null)
+                {
+                    <p>@Model.Username</p>
+                }
+                <button class="modify-btn">Modify</button>
+            </div>
+            <div class="profile-field">
+                <h3>Email:</h3>
+                @if (Model != null)
+                {
+                    <p>@Model.Email</p>
+                }
+                <button class="modify-btn">Modify</button>
+            </div>
+            <div class="profile-field">
+                <h3>Name:</h3>
+                @if (Model != null)
+                {
+                    <p>@Model.FirstName @Model.LastName</p>
+                }
+                <button class="modify-btn">Modify</button>
+            </div>
+            <div class="profile-field">
+                <h3>City:</h3>
+                @if (Model != null)
+                {
+                    <p>@Model.City</p>
+                }
+                <button class="modify-btn">Modify</button>
+            </div>
+            <div class="profile-field">
+                <h3>Birthday:</h3>
+                @if (Model != null)
+                {
+                    <p>@Model.Birthday</p>
+                }
+                <button class="modify-btn">Modify</button>
+            </div>
+            <div class="password-link">
+                <a href="#">Do you want to change your password?</a>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+</body>
+</html>
