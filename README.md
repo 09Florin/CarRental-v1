@@ -1,6 +1,6 @@
 # CarRental-v1
 
-First version of a car rental website using MVC approach 
+First version of a car rental website using MVC approach in ASP.NET7
 
 
 ![Main Page Car Rental](https://github.com/09Florin/CarRental-v1/assets/92792343/f57bcbe0-5c1f-422d-baeb-a7c55d241e24)
